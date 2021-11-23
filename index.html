@@ -1,142 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>india lab examples</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!-- Noah Kerstiens
+CIS 376
+Hotel Lab
+10/26/2021
+
+    Creating a Interactive Form 
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>India Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap v.5 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
     <link rel="stylesheet" href="css/india.css">
+    
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
 
-</head>
+  <body>
 
-<body>
     <nav class="navbar bg-dark navbar-dark navbar-expand-sm sticky-top">
-        <p class="navbar-brand ps-3">India Lab Examples</p>
-        <ul class="navbar-nav">
-            <li class="navitem"><a class="nav-link" href="https://www.w3schools.com/bootstrap5/bootstrap_forms.php" target="_blank">BS5 Forms @ W3C-School</a> </li>
-            <li class="navitem"><a class="nav-link" href="https://codepen.io/barrycumbie/pen/abyVxmV" target="_blank">See the CodePen version</a> </li>
-            <li class="navitem"><button id="btnLoadData" class="btn btn-secondary">load json</button></li>
-        </ul>
-
+      <p class="navbar-brand ps-3">India Lab</p>
+      <ul class="navbar-nav">
+        <li class="navitem"><a class="nav-link" href="https://github.com/nkerstiens/India-Lab" target="_blank">Repo Link</a> </li>
+        <li class="navitem"><a class="nav-link" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fnkerstiens.github.io%2FIndia-Lab%2F" target="_blank">Click for Validation</a> </li>
+          </ul>
     </nav>
 
-    <div class="container-fluid">
+    <h1>Gym Account</h1>
+    <h6>Enter your Information Below</h6>
 
-        <div id="dataContainer"></div>
-        <!--   first row -->
-        <div class="row p-1.5 m-1.5">
+    <!-- Firstname + Last name -->
+    <h4>Account Info</h4>
+    <form action="/action_page.php">
+      <label for="fname">First name:</label>
+      <input id="fname" type="text" placeholder="Enter First Name" name="fname"><br /><br />
+      <label for="lname">Last name:</label>
+      <input id="lname"type="text" placeholder="Enter Last Name" name="lname"/><br /><br />
+      <label for="ssn">Social Security Number:</label>
+      <input type="snumber" id="ssn" placeholder="Enter SSN (no spaces)" name="ssn"/><br /><br />
+      <label for="pnumber">Phone Number:</label>
+      <input type="number" id="pnum" placeholder="Enter Phone Number (no spaces)" name="pnum"/><br /><br />
+      <label for="creditnumber">Credit Card Number:</label>
+      <input type="number" id="cnum" placeholder="Enter Credit Card# (no spaces)" name="cnum"/><br /><br />
+      <label for="age">Age:</label>
+      <input type='text' id='age' placeholder='Enter your age'><br /><br />
+      <!-- <input type="submit" value="Submit" /> -->
+    </form>
 
-            <!--   no spaces blur  -->
-            <div class="col-md-5 card">
-                <div class="card-body">
-                    <h4 class="card-title">Example #1. </h4>
-                    <h5>validate when clicked off (blur)</h5>
-                    <label for="noSpaces" class="form-label">User Name</label>
-                    <input id="noSpaces" class="form-control" type="text" placeholder="Enter User Name (no spaces)" name="noSpaces">
-                    <!-- this is where the validation will appear, the .next() dom object <p> -->
-                    <p class="card-footer"></p>
-                </div>
-                <p></p>
-            </div>
-
-            <!-- only numbers keyup (or keydown)   -->
-            <div class="col-md-5 m-l-2 card">
-                <div class="card-body">
-
-                    <h4 class="card-title">Example #2. </h4>
-                    <h5>only allow numbers (keyPress)</h5>
-
-                    <label for="noAlpha" class="form-label">Account No. </label>
-                    <input id="noAlpha" class="form-control" type="text" placeholder="Enter Account Number (only numbers)" name="noAlpha">
-                    <!-- this is where the validation will appear, the .next() dom object <p> -->
-                    <p class="card-footer"></p>
-
-                </div>
-            </div>
+    <!-- Email + Password -->
+    <h4>Login Credentials</h4>
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder='Enter your Email'
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">
+          We'll never share your email with anyone else.
         </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder='Enter your Password'
+        />
+     
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    </form>
+    <br />
 
-        <!-- second row -->
-        <div class="row">
-            <div class="col-md-5 offset-md-1 card">
-                <div class="card-body">
+    <!-- Date + time -->
+    <h4>Enter Your Birthday</h4>
+    <input type="datetime-local" /> <br />
+    <br />
 
-                    <h4 class="card-title">Example #3. </h4>
-                    <h5>only allow alpha on(input)</h5>
+    <!-- <input type="file" /> <br /> -->
+    <h4>What is your Goal?</h4>
+    <input type="radio" />Strong <br />
+    <input type="radio" />Stronger<br />
+    <input type="radio" />Strongest<br /><br />
 
-                    <label for="noNumbers" class="form-label">User Name</label>
-                    <input id="noNumbers" class="form-control" type="text" placeholder="Enter User Name (no numbers)" name="noNumbers">
-                    <!-- this is where the validation will appear, the .next() dom object <p> -->
-                    <p class="card-footer"></p>
+    <input type="checkbox" /> I am not a robot<br /><br />
+  
+</div>
 
-                </div>
-            </div>
+<div class="row">
 
-            <div class="col-md-5 offset-md-1 card">
-                <div class="card-body">
+  <div class="col-md-2 offset-md-5"> 
+  <button id="submitButton" class="btn btn-primary" type="submit">Submit</button>
+</div>
+</div>
 
-                    <h4 class="card-title">Example #4. </h4>
-                    <h5>same as #3 w/keydown</h5>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
 
-                    <label for="noNumbersDown" class="form-label">User Name</label>
-                    <input id="noNumbersDown" class="form-control" type="text" placeholder="Enter User Name (no numbers)" name="noNumbersDown">
-                    <!-- this is where the validation will appear, the .next() dom object <p> -->
-                    <p class="card-footer"></p>
-
-                </div>
-            </div>
-        </div>
-
-        <!--   third row -->
-        <div class="row">
-            <div class="col-md-5 offset-md-1 card">
-                <div class="card-body">
-
-                    <h4 class="card-title">Example #5. </h4>
-                    <h5>one input => to another</h5>
-
-                    <label for="petKind" class="form-label">Pet Species</label>
-                    <select id="petKind" class="form-select" type="select" name="petName">
-          <option value="" disabled selected>Select your option</option>
-          <option value="dog">🐶</option>
-          <option value="cat">🐱</option>
-          <option value="mouse">🐭</option>
-          <option value="hampster">🐹</option>
-          <option value="frog">🐸</option>
-          <option value="kuola">🐨</option>
-        </select>
-                    <hr />
-                    <label for="petName" class="form-label">Pet Names</label>
-                    <select id="petName" class="form-select" type="select" name="petName" disabled>
-          <option>☝🏼select pet species first</option>
-        </select>
-
-                </div>
-            </div>
-
-
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-2 offset-md-5">
-                <button id="submitButton" class="btn btn-primary" type="submit">Submit your Form!</button>
-            </div>
-        </div>
-
-
-
-        <!--   ends row container -->
-    </div>
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-    <!-- <script src="scripts/india.js"></script> -->
-    <script src="scripts/ajax.js"></script>
-
-</body>
-
+ </body>
 </html>
